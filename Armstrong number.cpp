@@ -1,6 +1,7 @@
-#include <iostream>
-#include <cmath>
+#include <iostram>
+#include <stdio.h>
 #include <conio.h>
+#include <cmath>
 
 using namespace std;
 
@@ -8,17 +9,24 @@ using namespace std;
 
 int main() 
 {
-	int n,sum,original;					//initialize variable
-	
+	int n,sum,original,power,i=0,m;					//initialize variable
+	cout<<"Enter the size of the number:";
+	cin>>power;
 	cout<<"Enter the number:";
 	cin>>n;
 	
 	original = n;						//initialize original to n;
 	
+	while(n>0){							//To count the size of number of elements of given number
+		n=n/10;
+		i++;
+	}
+	
+	if(i==power){
 	while(n>0)
 	{
 		int lastdigit=n%10;							//taking remainder in lastdigit
-		sum= sum + pow(lastdigit,3);				//storing cube of lastdigit in sum
+		sum= sum + pow(lastdigit,power);				//storing power of lastdigit in sum
 		n=n/10;										//make n/10 store in n for continue of while loop
 		
 	}
@@ -31,7 +39,13 @@ int main()
 	{
 		cout<<"The number is not Armstrong Number.";
 	}
-	
+ }
+ 
+ 	else
+	 {
+	 	system("Color 04");
+ 		printf("You have entered wrong size of input!");
+	 }
 	getch();
 	return 0;
 }
