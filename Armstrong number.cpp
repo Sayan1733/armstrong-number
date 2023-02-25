@@ -1,4 +1,4 @@
-#include <iostram>
+#include <iostream>
 #include <stdio.h>
 #include <conio.h>
 #include <cmath>
